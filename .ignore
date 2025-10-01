@@ -1,0 +1,21 @@
+# Ignore all Python files in any directory
+*.py
+
+# If you also want to ignore Python bytecode and cache files:
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# If you want to ignore Python virtual environments:
+venv/
+env/
+ENV/
+.venv/
+
+# If you want to ignore Python distribution/packaging files:
+*.egg
+*.egg-info/
+dist/
+build/
