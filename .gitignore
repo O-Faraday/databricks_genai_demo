@@ -20,3 +20,4 @@ ENV/
 *.egg-info/
 dist/
 build/
+RAG/
