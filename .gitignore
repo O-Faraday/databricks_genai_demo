@@ -1,5 +1,6 @@
 # Ignore all Python files in any directory
 *.py
+*.yaml
 
 # If you also want to ignore Python bytecode and cache files:
 __pycache__/
