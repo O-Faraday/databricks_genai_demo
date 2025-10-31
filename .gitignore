@@ -21,3 +21,4 @@ ENV/
 dist/
 build/
 RAG/
+data/
