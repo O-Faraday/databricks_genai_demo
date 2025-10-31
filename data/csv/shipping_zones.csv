@@ -1,0 +1,13 @@
+zone_id,country,region,base_rate,rate_per_kg,estimated_days
+1,USA,Northeast,5.99,1.50,3-5
+2,USA,Southeast,5.99,1.50,3-5
+3,USA,Midwest,6.99,1.75,4-6
+4,USA,Southwest,7.99,2.00,4-6
+5,USA,West Coast,8.99,2.25,5-7
+6,USA,Alaska/Hawaii,15.99,5.00,7-10
+7,Canada,Eastern Canada,12.99,3.50,5-8
+8,Canada,Western Canada,14.99,4.00,6-9
+9,Mexico,All Regions,19.99,4.50,7-12
+10,UK,All Regions,24.99,5.00,8-14
+11,EU,Western Europe,29.99,6.00,10-15
+12,EU,Eastern Europe,34.99,7.00,12-18
