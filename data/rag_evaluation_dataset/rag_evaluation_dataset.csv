@@ -1,0 +1,16 @@
+query_id,query,query_type,difficulty,target_pdf,expected_key_points,notes
+1,"What are the specifications of the UltraView 4K 27"" monitor?",factual_retrieval,easy,product_catalog.pdf,"Screen size, Resolution, Connectivity, Features",Test basic product spec retrieval
+2,"Can I return opened software and what is the refund timeline?",multi_part_factual,medium,return_policy.pdf,"Opened software is non-returnable; 3-10 business days for refunds",Tests non-returnable items + refund timeline
+3,"My laptop won't turn on. What troubleshooting steps should I try?",procedural,medium,technical_faq.pdf,"Check power, hard reset, external display test",Tests troubleshooting procedures
+4,How much does express overnight shipping cost and how long does delivery take?,factual_retrieval,easy,shipping_guide.pdf,"$29.99; 1-2 days delivery",Simple shipping fact retrieval
+5,"I want to buy the ProBook 15"" laptop. What processor does it have and what's included in the box?",multi_part_factual,medium,product_catalog.pdf,"Intel i7 processor, 16GB RAM, included accessories list",Tests product specs + accessories
+6,What is the return window for items purchased during the holiday season?,policy_specific,medium,return_policy.pdf,60-day holiday return window,Tests policy variations
+7,My monitor displays a blurry image. How can I fix this?,troubleshooting,medium,technical_faq.pdf,"Resolution settings, ClearType, correct cables",Tests display troubleshooting
+8,What is the minimum order amount for free standard shipping?,factual_retrieval,easy,shipping_guide.pdf,$50 minimum for free standard shipping,Simple policy fact
+9,What audio codecs does the Bluetooth speaker support and what is its battery life?,multi_part_technical,medium,product_catalog.pdf,"Audio codecs list, battery life duration",Tests technical specifications
+10,"If I receive a damaged item, what should I do and how long will the replacement take?",cross_document_reasoning,hard,"return_policy.pdf, shipping_guide.pdf","Damaged item process, no return shipping cost, timeline",Tests cross-document synthesis
+11,How do I set up dual monitors on Windows?,procedural,medium,technical_faq.pdf,"Windows display settings, dual monitor configuration steps",Tests installation procedures
+12,Are there any items that cannot be returned under any circumstances?,policy_edge_case,medium,return_policy.pdf,"Personal care, opened software, customized items, final sale",Tests comprehensive policy knowledge
+13,What should I do if my tracking number shows the package is lost?,issue_resolution,medium,shipping_guide.pdf,"Lost package procedures, contact support, investigation process",Tests problem resolution
+14,"I'm looking at the Smart Watch Series 5. What are its key features and is there a warranty?",cross_document_reasoning,hard,"product_catalog.pdf, return_policy.pdf","Smart Watch features, warranty information",Tests product info + warranty synthesis
+15,"Can I change the shipping address after placing an order, and if the expedited shipping is late, what are my options?",multi_scenario_complex,hard,shipping_guide.pdf,"Address change procedures, timing constraints, late delivery policy",Tests multiple complex scenarios
