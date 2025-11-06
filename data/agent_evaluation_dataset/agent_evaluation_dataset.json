@@ -1,0 +1,393 @@
+[
+  {
+    "query_id": 1,
+    "query": "Where is my order 1003?",
+    "query_type": "tool_only",
+    "complexity": "basic",
+    "required_tools": ["check_order_status"],
+    "required_retriever": false,
+    "target_data_sources": "orders.csv",
+    "expected_capabilities": [
+      "Call check_order_status(1003)",
+      "Return order status, tracking number",
+      "Provide estimated delivery timeframe"
+    ],
+    "expected_info": {
+      "order_status": "shipped or delivered",
+      "tracking_number": "present",
+      "delivery_estimate": "provided"
+    },
+    "evaluation_criteria": [
+      "Correctly identifies and calls check_order_status tool",
+      "Provides complete order information",
+      "Gives actionable next steps (tracking link)"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "query_id": 2,
+    "query": "Do you have the UltraView 4K monitor in stock? Will it work with my MacBook Pro?",
+    "query_type": "hybrid_tool_retriever",
+    "complexity": "intermediate",
+    "required_tools": ["check_product_stock"],
+    "required_retriever": true,
+    "target_data_sources": "products.csv, product_catalog.pdf",
+    "expected_capabilities": [
+      "Call check_product_stock for UltraView 4K",
+      "Retrieve compatibility info from product_catalog.pdf",
+      "Synthesize stock status with technical compatibility"
+    ],
+    "expected_info": {
+      "stock_status": "in stock with quantity",
+      "compatibility": "MacBook Pro compatibility confirmed",
+      "connection_details": "USB-C or HDMI options mentioned"
+    },
+    "evaluation_criteria": [
+      "Correctly checks stock availability using tool",
+      "Retrieves and explains compatibility from PDF",
+      "Combines both pieces of information coherently",
+      "Provides technical details (ports, resolution)"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "query_id": 3,
+    "query": "Can I return opened software?",
+    "query_type": "retriever_only",
+    "complexity": "basic",
+    "required_tools": [],
+    "required_retriever": true,
+    "target_data_sources": "return_policy.pdf",
+    "expected_capabilities": [
+      "Search return_policy.pdf for non-returnable items",
+      "Identify opened software in the list"
+    ],
+    "expected_info": {
+      "returnable": "No",
+      "reason": "Opened software is non-returnable"
+    },
+    "evaluation_criteria": [
+      "Correctly identifies opened software as non-returnable",
+      "Provides clear yes/no answer",
+      "Cites return policy appropriately"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "query_id": 4,
+    "query": "How much will shipping cost for the Gaming Chair to California?",
+    "query_type": "hybrid_tool_retriever",
+    "complexity": "intermediate",
+    "required_tools": ["get_product_details", "calculate_shipping"],
+    "required_retriever": true,
+    "target_data_sources": "products.csv, shipping_zones.csv, shipping_guide.pdf",
+    "expected_capabilities": [
+      "Get Gaming Chair weight from products table",
+      "Calculate shipping cost using calculate_shipping tool",
+      "Retrieve large item shipping policies from shipping_guide.pdf"
+    ],
+    "expected_info": {
+      "product_weight": "22 kg",
+      "shipping_cost": "calculated based on weight",
+      "special_considerations": "freight shipping for large items"
+    },
+    "evaluation_criteria": [
+      "Retrieves correct product weight",
+      "Calculates accurate shipping cost",
+      "Mentions special large item policies",
+      "Provides delivery timeframe"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "query_id": 5,
+    "query": "My laptop won't turn on after it arrived yesterday. What should I do?",
+    "query_type": "hybrid_multi_step",
+    "complexity": "advanced",
+    "required_tools": ["check_order_status"],
+    "required_retriever": true,
+    "target_data_sources": "orders.csv, technical_faq.pdf, return_policy.pdf",
+    "expected_capabilities": [
+      "Verify recent delivery using check_order_status",
+      "Retrieve troubleshooting steps from technical_faq.pdf",
+      "Retrieve DOA policy from return_policy.pdf",
+      "Provide empathetic, step-by-step resolution"
+    ],
+    "expected_info": {
+      "troubleshooting_steps": "power check, hard reset, external display",
+      "doa_policy": "DOA replacement available",
+      "resolution_path": "try troubleshooting first, then DOA replacement"
+    },
+    "evaluation_criteria": [
+      "Verifies order was recently delivered",
+      "Provides troubleshooting steps before escalating",
+      "Mentions DOA policy for defective items",
+      "Shows empathy and offers immediate help",
+      "Presents logical flow: troubleshoot → replace if needed"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "query_id": 6,
+    "query": "What are the technical specifications of the ProBook 15 inch laptop?",
+    "query_type": "retriever_only",
+    "complexity": "basic",
+    "required_tools": [],
+    "required_retriever": true,
+    "target_data_sources": "product_catalog.pdf",
+    "expected_capabilities": [
+      "Retrieve ProBook 15\" specs from product_catalog.pdf"
+    ],
+    "expected_info": {
+      "processor": "Intel i7",
+      "ram": "16GB",
+      "technical_details": "performance benchmarks, features"
+    },
+    "evaluation_criteria": [
+      "Provides complete technical specifications",
+      "Includes processor, RAM, and key features",
+      "Accurate information from catalog"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "query_id": 7,
+    "query": "I'm a Gold member. What are my benefits and do I have any recent orders?",
+    "query_type": "tool_only",
+    "complexity": "basic",
+    "required_tools": ["get_customer_tier_benefits", "get_customer_orders"],
+    "required_retriever": false,
+    "target_data_sources": "customers.csv, orders.csv",
+    "expected_capabilities": [
+      "Call get_customer_tier_benefits to retrieve Gold tier benefits",
+      "Call get_customer_orders to check order history",
+      "Present combined information clearly"
+    ],
+    "expected_info": {
+      "tier_benefits": "free express shipping, priority support",
+      "order_history": "list of recent orders"
+    },
+    "evaluation_criteria": [
+      "Correctly retrieves tier benefits",
+      "Lists recent orders if any",
+      "Explains benefits clearly",
+      "Acknowledges Gold tier status"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "query_id": 8,
+    "query": "I need a good keyboard for programming under $150. What do you recommend?",
+    "query_type": "hybrid_tool_retriever",
+    "complexity": "intermediate",
+    "required_tools": ["get_product_details", "get_customer_tier_benefits", "check_product_stock"],
+    "required_retriever": true,
+    "target_data_sources": "products.csv, customers.csv, product_catalog.pdf",
+    "expected_capabilities": [
+      "Filter products by category and price",
+      "Check customer tier for shipping benefits",
+      "Retrieve keyboard specifications from product_catalog.pdf",
+      "Provide personalized recommendation"
+    ],
+    "expected_info": {
+      "recommended_product": "Mechanical Keyboard RGB",
+      "price": "$129.99",
+      "programming_features": "mechanical switches, N-key rollover, macros",
+      "customer_benefits": "tier-specific shipping options"
+    },
+    "evaluation_criteria": [
+      "Recommends product within budget",
+      "Explains why it's good for programming",
+      "Mentions customer-specific benefits",
+      "Confirms stock availability",
+      "Provides relevant technical details"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "query_id": 9,
+    "query": "What's the return window for items purchased during the holiday season?",
+    "query_type": "retriever_only",
+    "complexity": "basic",
+    "required_tools": [],
+    "required_retriever": true,
+    "target_data_sources": "return_policy.pdf",
+    "expected_capabilities": [
+      "Search return_policy.pdf for holiday return policy"
+    ],
+    "expected_info": {
+      "holiday_window": "60 days",
+      "comparison": "vs 30 days standard"
+    },
+    "evaluation_criteria": [
+      "Correctly identifies 60-day holiday window",
+      "Distinguishes from standard policy",
+      "Clear and concise answer"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "query_id": 10,
+    "query": "I ordered a monitor but received a mouse. I need the monitor by Friday.",
+    "query_type": "hybrid_multi_step",
+    "complexity": "advanced",
+    "required_tools": ["check_order_status", "check_product_stock", "calculate_shipping"],
+    "required_retriever": true,
+    "target_data_sources": "orders.csv, products.csv, shipping_zones.csv, return_policy.pdf, shipping_guide.pdf",
+    "expected_capabilities": [
+      "Verify order details using check_order_status",
+      "Search return_policy.pdf for 'wrong item shipped'",
+      "Check monitor stock availability",
+      "Calculate express shipping to meet Friday deadline",
+      "Provide complete resolution plan"
+    ],
+    "expected_info": {
+      "wrong_item_policy": "immediate replacement at no cost",
+      "express_shipping": "overnight or expedited option",
+      "return_process": "prepaid label for wrong item",
+      "compensation": "possible credit or discount"
+    },
+    "evaluation_criteria": [
+      "Shows empathy for the error",
+      "Provides immediate resolution plan",
+      "Offers express shipping to meet deadline",
+      "Explains return process for wrong item",
+      "Mentions compensation appropriately",
+      "Multi-step problem solving demonstrated"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "query_id": 11,
+    "query": "My monitor displays a blurry image. How can I fix this?",
+    "query_type": "retriever_only",
+    "complexity": "basic",
+    "required_tools": [],
+    "required_retriever": true,
+    "target_data_sources": "technical_faq.pdf",
+    "expected_capabilities": [
+      "Search technical_faq.pdf for monitor troubleshooting",
+      "Provide blurry display solutions"
+    ],
+    "expected_info": {
+      "solutions": [
+        "Check resolution settings",
+        "Enable ClearType",
+        "Verify correct cables"
+      ]
+    },
+    "evaluation_criteria": [
+      "Provides multiple troubleshooting steps",
+      "Steps are clear and actionable",
+      "Addresses common causes",
+      "Systematic approach to problem solving"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "query_id": 12,
+    "query": "Can I return my order if I opened the box but didn't use the product?",
+    "query_type": "retriever_only",
+    "complexity": "intermediate",
+    "required_tools": [],
+    "required_retriever": true,
+    "target_data_sources": "return_policy.pdf",
+    "expected_capabilities": [
+      "Search return_policy.pdf for return conditions",
+      "Understand nuance between 'opened' and 'used'"
+    ],
+    "expected_info": {
+      "general_policy": "original packaging required",
+      "condition": "unused condition acceptable",
+      "exceptions": "certain categories non-returnable once opened"
+    },
+    "evaluation_criteria": [
+      "Explains general return conditions",
+      "Distinguishes between opened and used",
+      "Mentions product category may matter",
+      "Provides accurate policy interpretation"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "query_id": 13,
+    "query": "Is the Bluetooth speaker in stock and how long does the battery last?",
+    "query_type": "hybrid_tool_retriever",
+    "complexity": "intermediate",
+    "required_tools": ["check_product_stock"],
+    "required_retriever": true,
+    "target_data_sources": "products.csv, product_catalog.pdf",
+    "expected_capabilities": [
+      "Check stock using check_product_stock tool",
+      "Retrieve battery specs from product_catalog.pdf"
+    ],
+    "expected_info": {
+      "stock_status": "availability confirmed",
+      "battery_life": "specific hours mentioned",
+      "additional_specs": "audio codecs, features"
+    },
+    "evaluation_criteria": [
+      "Confirms stock availability",
+      "Provides battery life information",
+      "Both questions answered completely",
+      "May include additional relevant specs"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "query_id": 14,
+    "query": "How do I track my package and what should I do if it shows as lost?",
+    "query_type": "retriever_only",
+    "complexity": "intermediate",
+    "required_tools": [],
+    "required_retriever": true,
+    "target_data_sources": "shipping_guide.pdf",
+    "expected_capabilities": [
+      "Search shipping_guide.pdf for tracking instructions",
+      "Search shipping_guide.pdf for lost package procedures"
+    ],
+    "expected_info": {
+      "tracking_methods": "email, website, carrier sites",
+      "lost_package_process": "contact support, carrier investigation",
+      "resolution": "refund or replacement options"
+    },
+    "evaluation_criteria": [
+      "Explains how to track packages",
+      "Provides lost package resolution steps",
+      "Both parts of question addressed",
+      "Clear action items provided"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "query_id": 15,
+    "query": "Show me all laptops under $1000 that are in stock, and tell me which one is best for video editing",
+    "query_type": "hybrid_multi_step",
+    "complexity": "advanced",
+    "required_tools": ["get_product_details", "check_product_stock"],
+    "required_retriever": true,
+    "target_data_sources": "products.csv, product_catalog.pdf",
+    "expected_capabilities": [
+      "Filter products by category (laptops) and price (<$1000)",
+      "Check stock for each laptop",
+      "Retrieve detailed specs from product_catalog.pdf",
+      "Evaluate specs for video editing requirements",
+      "Provide recommendation with justification"
+    ],
+    "expected_info": {
+      "laptop_list": "filtered by price and stock",
+      "recommendation": "best option for video editing",
+      "justification": "based on processor, RAM, storage specs",
+      "technical_reasoning": "why specific laptop suits video editing"
+    },
+    "evaluation_criteria": [
+      "Correctly filters products by criteria",
+      "Verifies stock availability",
+      "Provides detailed comparison of options",
+      "Makes informed recommendation based on specs",
+      "Explains why recommended laptop suits video editing",
+      "Demonstrates understanding of technical requirements"
+    ],
+    "difficulty": "hard"
+  }
+]
