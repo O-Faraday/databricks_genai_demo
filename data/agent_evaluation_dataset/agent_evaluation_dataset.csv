@@ -1,6 +1,0 @@
-query_id,query,query_type,complexity,required_tools,required_retriever,target_data_sources,key_expected_info
-1,Where is my order 1003?,tool_only,basic,check_order_status,false,orders_feature,"Order status  tracking number"
-2,"Do you have the UltraView 4K monitor in stock? Will it work with my MacBook Pro?",hybrid_tool_retriever,intermediate,check_product_stock,true,"products_feature  product_catalog.pdf","Stock status  MacBook compatibility  connection details"
-3,I'm a Gold member email : john.smith@email.com.  What are my benefits and do I have any recent orders?,tool_only,basic,"get_customer_tier_benefits  get_customer_orders",false,"customers_feature  orders_feature","Gold benefits (free express shipping)  order history"
-4,What's the return window for items purchased during the holiday season?,retriever_only,basic,none,true,return_policy.pdf,60-day holiday window vs 30-day standard
-5,My monitor displays a blurry image. How can I fix this?,retriever_only,basic,none,true,technical_faq.pdf,"Resolution settings  ClearType  correct cables"
