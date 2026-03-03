@@ -1,0 +1,13 @@
+customer_id,email,first_name,last_name,tier,registration_date,total_orders,lifetime_value
+1,john.smith@email.com,John,Smith,Gold,2022-03-15,28,4250.00
+2,sarah.jones@email.com,Sarah,Jones,Silver,2023-01-10,12,1850.00
+3,mike.chen@email.com,Mike,Chen,Bronze,2024-06-20,3,425.00
+4,emma.wilson@email.com,Emma,Wilson,Gold,2021-11-05,35,6780.00
+5,david.brown@email.com,David,Brown,Silver,2023-08-12,15,2340.00
+6,lisa.garcia@email.com,Lisa,Garcia,Bronze,2024-09-01,2,180.00
+7,robert.taylor@email.com,Robert,Taylor,Gold,2022-07-22,42,8920.00
+8,jennifer.lee@email.com,Jennifer,Lee,Silver,2023-04-18,18,2650.00
+9,william.davis@email.com,William,Davis,Bronze,2024-10-05,1,89.99
+10,amanda.moore@email.com,Amanda,Moore,Silver,2023-11-30,10,1520.00
+11,james.martin@email.com,James,Martin,Gold,2022-01-08,38,7200.00
+12,patricia.white@email.com,Patricia,White,Bronze,2024-08-15,4,520.00
