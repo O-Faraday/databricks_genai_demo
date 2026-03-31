@@ -1,1 +1,16 @@
-
+query_id,query,target_data_sources,key_expected_info,tools used
+1,Where is my order 1003?,orders.csv,Order status  tracking number  delivery estimate,OK
+2,Do you have the UltraView 4K monitor in stock? Will it work with my MacBook Pro?,products.csv  product_catalog.pdf,Stock status  MacBook compatibility  connection details,OK
+3,Can I return opened software?,return_policy.pdf,No  opened software is non-returnable,OK
+4,How much will shipping cost for the Gaming Chair to California?,products.csv  shipping_zones.csv  shipping_guide.pdf,Product weight 22kg  calculated shipping cost  large item policies,
+5,My laptop won't turn on after it arrived yesterday. What should I do?,orders.csv  technical_faq.pdf  return_policy.pdf,Troubleshooting steps  DOA policy  empathetic resolution path,
+6,What are the technical specifications of the ProBook 15 inch laptop?,product_catalog.pdf,Intel i7 processor  16GB RAM  performance details,
+7,I'm a Gold member. What are my benefits and do I have any recent orders?,customers.csv  orders.csv,Gold benefits (free express shipping)  order history,OK
+8,I need a good keyboard for programming under $150. What do you recommend?,products.csv  customers.csv  product_catalog.pdf,Mechanical Keyboard RGB $129.99  programming features  customer benefits,
+9,What's the return window for items purchased during the holiday season?,return_policy.pdf,60-day holiday window vs 30-day standard,OK
+10,I ordered a monitor but received a mouse. I need the monitor by Friday.,orders.csv  products.csv  shipping_zones.csv  return_policy.pdf  shipping_guide.pdf,Wrong item policy  express shipping  prepaid return  compensation, shipping_guide +
+11,My monitor displays a blurry image. How can I fix this?,technical_faq.pdf,Resolution settings  ClearType  correct cables,OK
+12,Can I return my order if I opened the box but didn't use the product?,return_policy.pdf,Original packaging required  unused condition acceptable  category exceptions,
+13,Is the Bluetooth speaker in stock and how long does the battery last?,products.csv  product_catalog.pdf,Stock availability  battery life hours  audio specs,rate limit exceeded
+14,How do I track my package and what should I do if it shows as lost?,shipping_guide.pdf,Tracking methods (email  website)  lost package procedures  resolution options,OK
+15,Show me all laptops under $1000 that are in stock  and tell me which one is best for video editing,products.csv  product_catalog.pdf,Filtered laptop list  recommendation with specs justification  video editing requirements,OK
