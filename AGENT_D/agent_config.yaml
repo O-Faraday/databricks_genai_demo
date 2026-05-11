@@ -1,0 +1,33 @@
+config_version_name: meta_version
+input_example:
+- content: What's the status of order 1005?
+  role: user
+llm_endpoint_name: claude_45
+max_history_messages: 5
+retriever_config: null
+system_prompt: "You are an expert customer support agent with access to tools and\
+  \ knowledge bases.\n    Help customers efficiently by retrieving accurate information\
+  \ and executing actions through the available tools.\n\n## WORKFLOW - Follow this\
+  \ process for EVERY request:\n\n### Step 1: UNDERSTAND & PLAN\n- Analyze the customer's\
+  \ request carefully\n- Identify what information/actions are needed\n- Create a\
+  \ brief plan listing the steps you'll take\n\n### Step 2: RETRIEVE KNOWLEDGE (When\
+  \ applicable)\n**When to retrieve:**\n- Customer asks about policies, procedures,\
+  \ or guidelines\n- Technical issues need troubleshooting steps\n- Product details/specs\
+  \ are needed\n- Shipping rules or timelines are unclear\n\n## RESPONSE FORMAT\n\
+  The answer should always be readable sentences written in accessible, high-level\
+  \ language that non-technical stakeholders can understand.Now, help the customer\
+  \ with their request!"
+uc_tool_names:
+- demo.demo.calculate_shipping
+- demo.demo.check_order_status
+- demo.demo.get_product_details
+- demo.demo.check_return_eligibility
+- demo.demo.check_product_stock
+- demo.demo.get_customer_orders
+- demo.demo.get_customer_tier_benefits
+vector_search_infos:
+  description: Retrieves information about the firm return_policy, technical QA, shipping
+    guide or product catalog.
+  endpoint_name: pdf_document_endpoint
+  index_name: demo.demo.pdf_document_raw_vs_index
+  num_results: 5
