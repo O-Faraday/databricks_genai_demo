@@ -4,17 +4,20 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
+.claude
 
+# App env
+AGENT_APPS_F/*.yaml
 # If you want to ignore Python virtual environments:
 venv/
 env/
 ENV/
 .venv/
+.env
 
 # If you want to ignore Python distribution/packaging files:
 *.egg
 *.egg-info/
 dist/
 build/
-RAG/
 data/
