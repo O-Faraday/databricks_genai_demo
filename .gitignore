@@ -24,3 +24,6 @@ data/
 
 # No agent script in the memory lakebase
 MEMORY_4/*.py
+
+# Old version
+*_old.*
