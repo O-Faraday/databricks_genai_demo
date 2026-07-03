@@ -1,0 +1,26 @@
+# ── Databricks ────────────────────────────────────────────────────────────────
+mlflow==3.12.0
+databricks-sdk==0.64.0
+databricks-langchain==0.7.1
+unitycatalog-langchain==0.4.0
+databricks-mcp==0.9.0
+
+# ── LangChain stack ───────────────────────────────────────────────────────────
+# langchain limit 1.2.10 : unitycatalog-langchain==0.4.0 requires langchain<=1.2.10,>=1.0.0
+langchain==1.2.10
+# langchain-core constraint due to langchain 1.2.10 (>=1.2.10,<2.0.0)
+langchain-core==1.4.8
+
+# ── LangGraph stack ───────────────────────────────────────────────────────────
+# langgraphlimit 1.0.x : langchain==1.2.10 requires langgraph<1.1.0,>=1.0.8
+langgraph==1.0.10
+langgraph-prebuilt==1.0.13
+langgraph-checkpoint==4.1.1
+langgraph-sdk==0.3.15
+
+# ── Huggingface stack ─────────────────────────────────────────────────────────
+transformers==5.12.0
+torch==2.12.0
+nltk==3.9.4
+reportlab==5.0.0
+ipykernel==7.3.0
